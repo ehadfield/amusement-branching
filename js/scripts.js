@@ -7,18 +7,35 @@
 /* Click on header link and our div*/
 
 $(document).ready(function(event) {
-  var choiceTurtle = $ ("#turtleLink").click(function(){
-    (".turtle").val();
-
-  var choiceFox = $ ("#foxLink").click(function(){
-    (".fox").val();
-
-  var choiceBear = $ ("#bearLink").click(function(){
-      (".bear").val();
-
-  event.preventDefault();
+  var choiceTurtle = $("#turtleLink").click(function(event){
+    event.preventDefault();
+    $("div").removeClass(".bear");
+    $("div").removeClass(".fox");
+    $(".fox").hide();
+    $(".bear").hide();
+    $(".turtle").show();
+    return true;
   });
 
-if (choiceTurtle === $(".turtle").val(){
-  $(".turtle").show();
-}
+  var choiceFox = $ ("#foxLink").click(function(event){
+    event.preventDefault();
+    $("div").removeClass(".turtle");
+    $("div").removeClass(".bear");
+    $(".turtle").hide();
+    $(".bear").hide();
+      $(".fox").show();
+    return true;
+  });
+
+  var choiceBear = $ ("#bearLink").click(function(event){
+    event.preventDefault();
+    $("div").removeClass(".fox");
+    $("div").removeClass(".turtle");
+    $(".fox").hide();
+    $(".turtle").hide();
+    $(".bear").show();
+
+      return true;
+    });
+
+});

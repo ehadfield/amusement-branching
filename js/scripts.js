@@ -1,41 +1,30 @@
-/* HTML: 3 links to 3 different animals: when user clicks a link, that animal's infor appears. When another link is clicked, current animal dissappears and new animal appears.
+/* user submit age in prompt (Enter age)
+input < 5  Ride A  highlights div (par/image)
+input < 10 Ride B highlights div (par/image) div2 (par2/image2)
+input < 99 Ride C highlights div (par/image) div2 (par2/image2) div3 (par3/image3)
+else > 100  Can't Ride  highlights div4 (par4)
+*/
 
-/* 1. Ask user which aninmal
-2. Up click show paragraph and img for selected
-3. click next animal removes class of previous animal and show next animal
+$(document).ready(function(age){
+  var age = parseInt(prompt("Enter your age here"));
 
-/* Click on header link and our div*/
+  if (age>=0  && age<=5) {
+    $(".levelOne").addClass("levelOneBorder")
 
-$(document).ready(function(event) {
-  var choiceTurtle = $("#turtleLink").click(function(event){
-    event.preventDefault();
-    $("div").removeClass(".bear");
-    $("div").removeClass(".fox");
-    $(".fox").hide();
-    $(".bear").hide();
-    $(".turtle").show();
-    return true;
-  });
+  }else if (age<=10){
+    $(".levelTwo").addClass("levelTwoBorder")
+    $(".levelOne").addClass("levelOneBorder")
 
-  var choiceFox = $ ("#foxLink").click(function(event){
-    event.preventDefault();
-    $("div").removeClass(".turtle");
-    $("div").removeClass(".bear");
-    $(".turtle").hide();
-    $(".bear").hide();
-      $(".fox").show();
-    return true;
-  });
 
-  var choiceBear = $ ("#bearLink").click(function(event){
-    event.preventDefault();
-    $("div").removeClass(".fox");
-    $("div").removeClass(".turtle");
-    $(".fox").hide();
-    $(".turtle").hide();
-    $(".bear").show();
 
-      return true;
-    });
+  }else if (age<=99){
+    $(".levelThree").addClass("levelThreeBorder")
+    $(".levelTwo").addClass("levelTwoBorder")
+    $(".levelOne").addClass("levelOneBorder")
+
+  }else{
+    $(".levelFour").addClass("levelFourBorder")
+
+  }
 
 });

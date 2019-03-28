@@ -1,11 +1,15 @@
-.turtle {
-  display: none;
+.levelOneBorder{
+  color: red;
 }
 
-.fox {
-  display: none;
+.levelTwoBorder{
+  color: red;
 }
 
-.bear {
-  display: none;
+.levelThreeBorder{
+color: red;
+}
+
+.levelFourBorder{
+  color: red;
 }
